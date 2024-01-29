@@ -47,7 +47,7 @@ app.get('/:id',async(req,res)=>{
 app.post('/:id',async(req,res)=>{
     let{name,company}=req.body
     let user=await person.findById(req.params.id)
-   console.log("user ",user)
+   console.log("user ",user,person)
 
     if(!user){
         res.status(400).json({
@@ -58,7 +58,7 @@ app.post('/:id',async(req,res)=>{
 
     user.name=name
     user.company=company
-    await person.save();
+    await user.save();
     
 
     res.status(200).json({
