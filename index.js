@@ -31,7 +31,7 @@ app.get('/:id',async(req,res)=>{
 
     if(!user){
         res.status(400).json({
-            message:"user not found"
+            message:"User not found"
         })
         return
     }
